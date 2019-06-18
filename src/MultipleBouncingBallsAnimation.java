@@ -8,11 +8,11 @@ import java.util.Random;
 import static java.awt.Color.BLACK;
 
 /**
- * creates an animation of bouncing balls
+ * creates an animation of bouncing balls.
  */
 public class MultipleBouncingBallsAnimation {
     /**
-     * creates an animation of bouncing balls
+     * creates an animation of bouncing balls.
      *
      * @param args array of balls radius
      */

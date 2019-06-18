@@ -1,15 +1,22 @@
 import biuoop.DrawSurface;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * The type Level name indicator.
+ */
 public class LevelNameIndicator implements Sprite {
     private String name;
-    private Rectangle shape=new Rectangle(new Point(550,0),100,20);
+    private Rectangle shape = new Rectangle(new Point(550, 0), 100, 20);
 
-    public LevelNameIndicator(String l){
+    /**
+     * Instantiates a new Level name indicator.
+     *
+     * @param l the l
+     */
+    public LevelNameIndicator(String l) {
         this.name = l;
     }
-
 
     /**
      * draw the sprite to the screen.
@@ -25,7 +32,7 @@ public class LevelNameIndicator implements Sprite {
                 (int) r.getWidth(), (int) r.getHeight());
         d.setColor(Color.BLACK);
         d.drawText((int) (r.getUpperLeft().getX() + (r.getWidth() / 2)),
-                (int) (r.getUpperLeft().getY() + (r.getHeight() / 2))+5, "Level Name: "+name, 15);
+                (int) (r.getUpperLeft().getY() + (r.getHeight() / 2)) + 5, "Level Name: " + name, 15);
     }
 
     /**

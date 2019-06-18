@@ -2,6 +2,9 @@ import biuoop.DrawSurface;
 import biuoop.GUI;
 import biuoop.Sleeper;
 
+/**
+ * The type Bouncing ball animation.
+ */
 public class BouncingBallAnimation {
     /**
      * generates an animation of a bouncing ball

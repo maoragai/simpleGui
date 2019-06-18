@@ -2,19 +2,33 @@ import biuoop.DrawSurface;
 import biuoop.GUI;
 import biuoop.Sleeper;
 
+/**
+ * The type Animation runner.
+ */
 public class AnimationRunner {
     private GUI gui;
     private int framesPerSecond;
-    private Sleeper sleeper=new Sleeper();
+    private Sleeper sleeper = new Sleeper();
 
+    /**
+     * Instantiates a new Animation runner.
+     *
+     * @param g   the g
+     * @param fpS the fp s
+     */
     public AnimationRunner(GUI g, int fpS) {
         this.gui = g;
         this.framesPerSecond = fpS;
     }
 
 
+    /**
+     * Run.
+     *
+     * @param animation the animation
+     */
     public void run(Animation animation) {
-        int millisecondsPerFrame = 1000/framesPerSecond;
+        int millisecondsPerFrame = 1000 / framesPerSecond;
         while (!animation.shouldStop()) {
             long startTime = System.currentTimeMillis(); // timing
             DrawSurface d = gui.getDrawSurface();

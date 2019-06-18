@@ -1,12 +1,20 @@
 import biuoop.DrawSurface;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * The type Lives indicator.
+ */
 public class LivesIndicator implements Sprite {
     private Counter lives;
-    private Rectangle shape=new Rectangle(new Point(0,0),100,20);
+    private Rectangle shape = new Rectangle(new Point(0, 0), 100, 20);
 
-    public LivesIndicator(Counter l){
+    /**
+     * Instantiates a new Lives indicator.
+     *
+     * @param l the l
+     */
+    public LivesIndicator(Counter l) {
         this.lives = l;
     }
 
@@ -34,7 +42,8 @@ public class LivesIndicator implements Sprite {
         if (lives.getValue() >= 0) {
             d.setColor(Color.BLACK);
             d.drawText((int) (r.getUpperLeft().getX() + (r.getWidth() / 2)),
-                    (int) (r.getUpperLeft().getY() + (r.getHeight() / 2))+5, "lives: "+Integer.toString(this.lives.getValue()), 15);
+                    (int) (r.getUpperLeft().getY() + (r.getHeight() / 2)) + 5, "lives: " + this.lives.getValue(),
+                    15);
         }
     }
 

@@ -1,7 +1,10 @@
 import biuoop.DrawSurface;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * The type Level 3 background.
+ */
 public class Level3Background implements Sprite {
 
     /**

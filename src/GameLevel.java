@@ -1,38 +1,46 @@
 import biuoop.DrawSurface;
-import biuoop.GUI;
 import biuoop.KeyboardSensor;
 import java.awt.Color;
 
 /**
  * GameLevel class declaration.
  */
-public class GameLevel implements Animation{
-   // GUI gui = new GUI("Arkanoid", 800, 600);
-    private AnimationRunner runner;//=new AnimationRunner(gui,60);
+public class GameLevel implements Animation {
+    private AnimationRunner runner;
     private boolean         running;
-    private KeyboardSensor  key; //= gui.getKeyboardSensor();
-    private Counter         live;// = new Counter();
-    private SpriteCollection sprites ;
+    private KeyboardSensor  key;
+    private Counter         live;
+    private SpriteCollection sprites;
     private GameEnvironment environment = new GameEnvironment();
     private Counter         blockCount = new Counter();
     private Counter         ballCount = new Counter();
-    private BlockRemover    blockRemover = new BlockRemover(this,blockCount);
-    private Counter         score ;
+    private BlockRemover    blockRemover = new BlockRemover(this, blockCount);
+    private Counter         score;
     private ScoreTrackingListener scoreListener;
     private LevelInformation level;
 
-    public GameLevel(LevelInformation LI,KeyboardSensor k,AnimationRunner ar,Counter l,Counter s) {
-        this.level = LI;
-        this.key=k;
-        this.runner=ar;
-        this.live=l;
-        sprites = new SpriteCollection();
-    this.score=s;
-    scoreListener = new ScoreTrackingListener(score);
+    /**
+     * Instantiates a new Game level.
+     *
+     * @param li the li
+     * @param k  the k
+     * @param ar the ar
+     * @param l  the l
+     * @param s  the s
+     */
+    public GameLevel(LevelInformation li, KeyboardSensor k, AnimationRunner ar, Counter l, Counter s) {
+        this.level = li;
+        this.key   = k;
+        this.runner = ar;
+        this.live   = l;
+        sprites     = new SpriteCollection();
+        this.score  = s;
+        scoreListener = new ScoreTrackingListener(score);
     }
 
     /**
      * adds collidable to the game.
+     *
      * @param c the collidable to add
      */
     public void addCollidable(Collidable c) {
@@ -41,6 +49,7 @@ public class GameLevel implements Animation{
 
     /**
      * add a sprite to this game.
+     *
      * @param s the sprite to add tho the game
      */
     public void addSprite(Sprite s) {
@@ -72,19 +81,6 @@ public class GameLevel implements Animation{
         bottomBorder.setHitPoints(-1);
         leftBorder.setHitPoints(-1);
         upperBorder.setHitPoints(-1);
-        int posOffset = 30;
-        int i=0;
-       /* for (Velocity v:level.initialBallVelocities()){
-            i++;
-            //create a ball
-            Ball ball1 = new Ball(385 + i*posOffset, 400  , 5, Color.WHITE);
-            ball1.setVelocity(v);
-            ball1.setBorders(600, 0, 0, 800);
-            ball1.addToGame(this);
-            ball1.setGameEnvironment(environment);
-            ballCount.increase(1);
-            posOffset += 10;
-        }*/
 
         //defining paddle
         Paddle pad = new Paddle(key, new Block(new Rectangle(new Point(400, 550), level.paddleWidth(), 20)));
@@ -92,11 +88,11 @@ public class GameLevel implements Animation{
         pad.addToGame(this);
 
         //defining scoreboard
-        ScoreIndicator SI = new ScoreIndicator(score);
+        ScoreIndicator si = new ScoreIndicator(score);
         //defining lives board
-        LivesIndicator LI = new LivesIndicator(live);
+        LivesIndicator li = new LivesIndicator(live);
         //level name indicator
-        LevelNameIndicator LN = new LevelNameIndicator(level.levelName());
+        LevelNameIndicator ln = new LevelNameIndicator(level.levelName());
 
         //adding borders and paddle to the game
         rightBorder.addToGame(this);
@@ -104,13 +100,13 @@ public class GameLevel implements Animation{
         leftBorder.addToGame(this);
         bottomBorder.addToGame(this);
         //adding scoreBoard and live indicator to the game
-        SI.addToGame(this);
-        LI.addToGame(this);
-        LN.addToGame(this);
+        si.addToGame(this);
+        li.addToGame(this);
+        ln.addToGame(this);
        // this.createBallsOnTopOfPaddle();
         //listener for the bottom border
-        BallRemover BR = new BallRemover(this, ballCount);
-        bottomBorder.addHitListener(BR);
+        BallRemover br = new BallRemover(this, ballCount);
+        bottomBorder.addHitListener(br);
 
         //here we should take care of the blocks that appear
         blockCount.increase(level.numberOfBlocksToRemove());
@@ -124,35 +120,34 @@ public class GameLevel implements Animation{
 
     }
 
-    /*
-this method was commented out because of the assignment instructions
- */
-    public void createBallsOnTopOfPaddle(){
+    /**
+     * Create balls on top of paddle.this method was commented out because of the assignment instructions.
+     */
+    public void createBallsOnTopOfPaddle() {
+
         int posOffset = 5;
-        int i=0;
-        for (Velocity v:level.initialBallVelocities()){
+        int i = 0;
+        for (Velocity v:level.initialBallVelocities()) {
             i++;
             //create a ball
-            Ball ball1 = new Ball(385 + i*posOffset, 400  , 5, Color.WHITE);
+            Ball ball1 = new Ball(385 +  posOffset, 400, 5, Color.WHITE);
             ball1.setVelocity(v);
             ball1.setBorders(602, 0, 0, 800);
             ball1.addToGame(this);
             ball1.setGameEnvironment(environment);
             ballCount.increase(1);
-            posOffset += 10;
+            posOffset += 20;
         }
-      /*  //defining paddle
-        Paddle pad = new Paddle(key, new Block(new Rectangle(new Point(400, 550), level.paddleWidth(), 30)));
-        pad.setMoveStep(level.paddleSpeed());
-        pad.addToGame(this);*/
      }
 
+    /**
+     * Play one turn.
+     */
     public void playOneTurn() {
-    CountdownAnimation CA = new CountdownAnimation(6,3,sprites);
+    CountdownAnimation ca = new CountdownAnimation(6, 3, sprites);
         this.createBallsOnTopOfPaddle();
-    while(!CA.shouldStop()){
-
-            this.runner.run(CA);
+    while (!ca.shouldStop()) {
+            this.runner.run(ca);
         }
              // or a similar method
             this.running = true;
@@ -161,20 +156,38 @@ this method was commented out because of the assignment instructions
             this.runner.run(this);
     }
 
-    public void removeCollidable(Collidable c){
+    /**
+     * Remove collidable.
+     *
+     * @param c the c
+     */
+    public void removeCollidable(Collidable c) {
         environment.removeCollifable(c);
     }
 
-    public void removeSprite(Sprite s){
+    /**
+     * Remove sprite.
+     *
+     * @param s the s
+     */
+    public void removeSprite(Sprite s) {
        sprites.removeSprite(s);
     }
 
-    public void run(){
+    /**
+     * Run.
+     */
+    public void run() {
         live.increase(4);
         this.initialize();
         this.playOneTurn();
     }
 
+    /**
+     * Gets block count.
+     *
+     * @return the block count
+     */
     public Counter getBlockCount() {
         return blockCount;
     }
@@ -187,16 +200,16 @@ this method was commented out because of the assignment instructions
             this.runner.run(new PauseScreen(this.key));
         }
         //checking if all the blocks are destroyed
-        if(blockCount.getValue()==0){
+        if (blockCount.getValue() == 0) {
             score.increase(100);
-            this.running=false;
+            this.running = false;
             //sprites.removeSprite();
             return;
         }
         //check if all balls are destroyed
-        if (ballCount.getValue()==0){
+        if (ballCount.getValue() == 0) {
             live.decrease(1);
-            this.running=false;
+            this.running = false;
         }
     }
 

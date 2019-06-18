@@ -8,21 +8,28 @@ public class GameEnvironment {
 
     /**
      * add the given collidable to the environment.
+     *
      * @param c collidable to add
      */
     public void addCollidable(Collidable c) {
         col.add(c);
-
     }
 
-    public void removeCollifable(Collidable c){
+    /**
+     * Remove collifable.
+     *
+     * @param c the c
+     */
+    public void removeCollifable(Collidable c) {
         col.remove(c);
     }
+
     /**
      * Assume an object moving from line.start() to line.end().
      * If this object will not collide with any of the collidables
      * in this collection, return null. Else, return the information
      * about the closest collision that is going to occur.
+     *
      * @param trajectory the direction line of the object
      * @return collision info object
      */

@@ -72,8 +72,14 @@ public class Paddle implements Sprite, Collidable {
         this.paddleShape.getCollisionRectangle().getUpperLeft().setX(
                 this.paddleShape.getCollisionRectangle().getUpperLeft().getX() + moveStep);
     }
-    public void setMoveStep(int moveStep) {
-        this.moveStep = moveStep;
+
+    /**
+     * Sets move step.
+     *
+     * @param mS the move step
+     */
+    public void setMoveStep(int mS) {
+        this.moveStep = mS;
     }
     /**
      * note the object that the time has passed.
@@ -114,12 +120,12 @@ public class Paddle implements Sprite, Collidable {
 
     /**
      * .
-     *
+     *@param b ball
      * @param collisionPoint  the point that the collision occurred in
      * @param currentVelocity the velocity of the ball at the collision moment
      * @return the new velocity for the ball
      */
-    public Velocity hit( Ball b,Point collisionPoint, Velocity currentVelocity) {
+    public Velocity hit(Ball b, Point collisionPoint, Velocity currentVelocity) {
         Rectangle shape;
         double originaldy = currentVelocity.getDy();
         double originaldx = currentVelocity.getDx();
@@ -163,7 +169,13 @@ public class Paddle implements Sprite, Collidable {
         g.addSprite(this);
         g.addCollidable(this);
     }
-    public void setPaddleWidth(int w){
+
+    /**
+     * Set paddle width.
+     *
+     * @param w the w
+     */
+    public void setPaddleWidth(int w) {
         this.paddleShape.getCollisionRectangle().setWidth1(w);
     }
 }

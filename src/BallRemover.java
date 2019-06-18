@@ -1,11 +1,20 @@
+/**
+ * The type Ball remover.
+ */
 public class BallRemover implements HitListener  {
 private GameLevel gameLevel;
 private Counter remainingBalls;
 
 
-    public BallRemover(GameLevel g, Counter c ){
-        this.gameLevel =g;
-        this.remainingBalls=c;
+    /**
+     * Instantiates a new Ball remover.
+     *
+     * @param g the g
+     * @param c the c
+     */
+    public BallRemover(GameLevel g, Counter c) {
+        this.gameLevel = g;
+        this.remainingBalls = c;
     }
 
     /**

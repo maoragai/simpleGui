@@ -7,6 +7,7 @@ public class CollisionInfo {
 
     /**
      * collision info constructor.
+     *
      * @param p the point of collision with an object
      * @param c the object the ball colliding with
      */
@@ -17,6 +18,7 @@ public class CollisionInfo {
 
     /**
      * the point at which the collision occurs.
+     *
      * @return the point at which the collision occurs.
      */
     public Point getCollisionPoint() {
@@ -25,6 +27,7 @@ public class CollisionInfo {
 
     /**
      * the collidable object involved in the collision.
+     *
      * @return the collidable object involved in the collision.
      */
     public Collidable getCollisionObject() {

@@ -1,5 +1,4 @@
 import biuoop.DrawSurface;
-
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +6,12 @@ import java.util.List;
 /**
  * Block class.
  */
-public class Block implements Collidable, Sprite ,HitNotifier{
+public class Block implements Collidable, Sprite, HitNotifier {
     private Color color1;
     private Rectangle shape;
+    //initialized hit counter to value
+    private int hitPoints = 1;
+    private List<HitListener> hitListeners = new ArrayList<HitListener>();
 
     /**
      * Block constructor.
@@ -20,16 +22,14 @@ public class Block implements Collidable, Sprite ,HitNotifier{
         this.shape = rectangle;
     }
 
-
+    /**
+     * Gets hit points.
+     *
+     * @return the hit points
+     */
     public int getHitPoints() {
         return hitPoints;
     }
-
-    //initialized hit counter to value
-    private int hitPoints = 1;
-    List<HitListener> hitListeners=new ArrayList<HitListener>();
-
-
 
     /**
      * set the hit counter number.
@@ -39,7 +39,6 @@ public class Block implements Collidable, Sprite ,HitNotifier{
     public void setHitPoints(int hP) {
         this.hitPoints = hP;
     }
-
 
     /**
      * color getter.
@@ -71,7 +70,7 @@ public class Block implements Collidable, Sprite ,HitNotifier{
      * @return the new Velocity
      */
     @Override
-    public Velocity hit(Ball ball,Point collisionPoint, Velocity currentVelocity) {
+    public Velocity hit(Ball ball, Point collisionPoint, Velocity currentVelocity) {
         if (hitPoints != 0) {
             hitPoints--;
         }
@@ -141,11 +140,15 @@ public class Block implements Collidable, Sprite ,HitNotifier{
     public void timePassed() {
     }
 
-    public void removeFromGame(GameLevel gameLevel){
+    /**
+     * Remove from game.
+     *
+     * @param gameLevel the game level
+     */
+    public void removeFromGame(GameLevel gameLevel) {
         gameLevel.removeCollidable(this);
         gameLevel.removeSprite(this);
     }
-
 
     /**
      * Add hl as a listener to hit events.

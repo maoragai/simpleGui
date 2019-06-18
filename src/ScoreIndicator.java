@@ -1,11 +1,19 @@
 import biuoop.DrawSurface;
 
-import java.awt.*;
+import java.awt.Color;
 
+/**
+ * The type Score indicator.
+ */
 public class ScoreIndicator implements Sprite {
     private Counter scr;
-    private Rectangle shape=new Rectangle(new Point(0,0),800,20);
+    private Rectangle shape = new Rectangle(new Point(0, 0), 800, 20);
 
+    /**
+     * Instantiates a new Score indicator.
+     *
+     * @param scoreRef the score ref
+     */
     public ScoreIndicator(Counter scoreRef) {
         this.scr = scoreRef;
     }
@@ -34,7 +42,8 @@ public class ScoreIndicator implements Sprite {
         if (scr.getValue() >= 0) {
             d.setColor(Color.BLACK);
             d.drawText((int) (r.getUpperLeft().getX() + (r.getWidth() / 2)),
-                    (int) (r.getUpperLeft().getY() + (r.getHeight() / 2))+5, "score: "+Integer.toString(this.scr.getValue()), 15);
+                    (int) (r.getUpperLeft().getY() + (r.getHeight() / 2)) + 5,
+                    "score: " + this.scr.getValue(), 15);
         }
 
     }

@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 
-import static jdk.nashorn.internal.objects.Global.Infinity;
 
 /**
  * line class declaration.
  */
 public class Line {
+    private Double infinity = Double.POSITIVE_INFINITY;
+    private Double negInfinity = Double.NEGATIVE_INFINITY;
+
     /**
      * startpoint setter.
+     *
      * @param start the point to set as startpoint
      */
     public void setStartPoint(Point start) {
@@ -16,6 +19,7 @@ public class Line {
 
     /**
      * endpoint setter.
+     *
      * @param end the point to set as endpoint
      */
     public void setEndPoint(Point end) {
@@ -53,7 +57,7 @@ public class Line {
     /**
      * gets the line's length.
      *
-     * @return line's length
+     * @return line 's length
      */
     public double length() {
         return startPoint.distance(endPoint);
@@ -62,7 +66,7 @@ public class Line {
     /**
      * gets the middle point of the line.
      *
-     * @return line's middle point
+     * @return line 's middle point
      */
     public Point middle() {
         Point middlePoint = new Point((startPoint.getX() + endPoint.getX()) / 2,
@@ -73,7 +77,7 @@ public class Line {
     /**
      * gets the line's start point object.
      *
-     * @return line's start point object
+     * @return line 's start point object
      */
     public Point getStartPoint() {
 
@@ -83,7 +87,7 @@ public class Line {
     /**
      * gets the line's end point object.
      *
-     * @return line's end point object
+     * @return line 's end point object
      */
     public Point getEndPoint() {
         return endPoint;
@@ -127,11 +131,11 @@ public class Line {
         if (slopeLine1 == slopeLine2) {
             return null;
         }
-        if ((slopeLine1 == Infinity) || (slopeLine1 == -Infinity)) {
+        if ((slopeLine1 == infinity) || (slopeLine1 == negInfinity)) {
             intersectionX = this.startPoint.getX();
             intersectionY = slopeLine2 * intersectionX + line1YIntersection;
         }
-        if ((slopeLine2 == Infinity) || (slopeLine2 == -Infinity)) {
+        if ((slopeLine2 == infinity) || (slopeLine2 == negInfinity)) {
             intersectionX = other.startPoint.getX();
             intersectionY = slopeLine1 * intersectionX + line1YIntersection;
         }
@@ -179,6 +183,7 @@ public class Line {
      * Otherwise, return the closest intersection point to the
      * start of the line.
      * has to be checked
+     *
      * @param rect the rectangular shape that the line intersects with
      * @return closest point of intersection
      */

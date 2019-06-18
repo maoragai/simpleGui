@@ -6,6 +6,7 @@ import biuoop.DrawSurface;
 public interface Sprite {
     /**
      * draw the sprite to the screen.
+     *
      * @param d the drawSurface to draw on
      */
     void drawOn(DrawSurface d);
@@ -17,6 +18,7 @@ public interface Sprite {
 
     /**
      * add this object to a specified game.
+     *
      * @param g the game to be added to
      */
     void addToGame(GameLevel g);

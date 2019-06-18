@@ -1,30 +1,44 @@
 import biuoop.DrawSurface;
 import biuoop.Sleeper;
+import java.awt.Color;
 
-import java.awt.*;
 
+/**
+ * The type Countdown animation.
+ */
 public class CountdownAnimation implements Animation {
     private SpriteCollection gameScreen;
-    private int countFrom;
-    private double numOfSeconds;
-    private int counterCurrent;
-    private boolean shouldStop;
-    private Sleeper sleeper;
+    private int              countFrom;
+    private double           numOfSeconds;
+    private int              counterCurrent;
+    private boolean          shouldStop;
+    private Sleeper          sleeper;
 
+    /**
+     * Instantiates a new Countdown animation.
+     *
+     * @param num   the num
+     * @param count the count
+     * @param game  the game
+     */
     public CountdownAnimation(double num, int count, SpriteCollection game) {
-        this.numOfSeconds=num;
-        this.countFrom=count;
-        this.gameScreen=game;
-        this.shouldStop=false;
-        this.counterCurrent=count;
-        this.sleeper=new Sleeper();
+        this.numOfSeconds = num;
+        this.countFrom = count;
+        this.gameScreen = game;
+        this.shouldStop = false;
+        this.counterCurrent = count;
+        this.sleeper = new Sleeper();
     }
 
+    /**
+     * draw a one frame of objects.
+     * @param d the drawsurface
+     */
     public void doOneFrame(DrawSurface d) {
         this.gameScreen.drawAllOn(d);
-        if (this.counterCurrent>0){
+        if (this.counterCurrent > 0) {
             d.setColor(Color.RED);
-            d.drawText(d.getWidth()/2,d.getHeight()/2,Integer.toString(this.counterCurrent),50);
+            d.drawText(d.getWidth() / 2, d.getHeight() / 2, Integer.toString(this.counterCurrent), 50);
 
         }
         if (this.counterCurrent != this.countFrom) {
@@ -34,8 +48,12 @@ public class CountdownAnimation implements Animation {
 
     }
 
+    /**
+     * note if the animation should stop running.
+     * @return boolean
+     */
     public boolean shouldStop() {
-        if (this.counterCurrent<0){
+        if (this.counterCurrent < 0) {
             return true;
         }
         return this.shouldStop;

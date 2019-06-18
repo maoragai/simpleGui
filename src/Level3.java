@@ -1,27 +1,43 @@
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Level 3.
+ */
 public class Level3 implements LevelInformation {
 
-    private int numberofballs;
-    private int paddlespeed,paddlewidth,numberOfBlocksToRemove;
-    private List<Velocity> initialballvelocity=new ArrayList<>();
-    private Sprite background;
-    private List<Block> blocksarray=new ArrayList<>();
-    private String levelname="Green 3";
-    double defaultWidth = 45, defaultHeight = 25;
+    private int         numberofballs;
+    private int         paddlespeed, paddlewidth, numberOfBlocksToRemove;
+    private List<Velocity> initialballvelocity = new ArrayList<>();
+    private Sprite      background;
+    private List<Block> blocksarray = new ArrayList<>();
+    private String      levelname = "Green 3";
+    /**
+     * The Default width.
+     */
+    private double defaultWidth = 45, /**
+     * The Default height.
+     */
+    defaultHeight = 25;
 
+    /**
+     * Instantiates a new Level 3.
+     */
     public Level3() {
-        background =new Level3Background();
+        background = new Level3Background();
         //build balls velocity array here
-        initialballvelocity.add(new Velocity(2,2));
-        initialballvelocity.add(new Velocity(3,3));
+        initialballvelocity.add(new Velocity(-2, -2));
+        initialballvelocity.add(new Velocity(-3, -3));
+        initialballvelocity.add(new Velocity(-3, -3));
+        initialballvelocity.add(new Velocity(3, -3));
+        initialballvelocity.add(new Velocity(3, -3));
+        initialballvelocity.add(new Velocity(3, -3));
 
         numberofballs = initialballvelocity.size();
         //paddle
-        this.paddlespeed=20;
-        this.paddlewidth=50;
+        this.paddlespeed = 20;
+        this.paddlewidth = 50;
 
         //create an array of colors for the block rows
         ArrayList<Color> blockColors = new ArrayList<Color>();
@@ -33,7 +49,7 @@ public class Level3 implements LevelInformation {
         blockColors.add(Color.GREEN);
         //create the game blocks rows
         //set a reference point for the game blocks
-        Point reference = new Point(800-20, 150-10);
+        Point reference = new Point(800 - 20, 150 - 10);
         //create the game blocks rows
         for (int i = 1; i <= 6; i++) {
             for (int j = 1; j <= 12 - i; j++) {
@@ -42,44 +58,79 @@ public class Level3 implements LevelInformation {
                 b.setColor(blockColors.get(i - 1));
                 blocksarray.add(b);
             }
-            reference.setY(reference.getY() + defaultHeight);// = reference.getY() + defaultHeight;
+            reference.setY(reference.getY() + defaultHeight);
         }
-
         this.numberOfBlocksToRemove = blocksarray.size();
     }
 
-
-    public int numberOfBalls(){
+    /**
+     * Number of balls int.
+     *
+     * @return the number of balls in the level
+     */
+    public int numberOfBalls() {
         return numberofballs;
     }
-    // The initial velocity of each ball
-    // Note that initialBallVelocities().size() == numberOfBalls()
-    public List<Velocity> initialBallVelocities(){
+    /**
+     * Initial ball velocities list.
+     *The initial velocity of each ball
+     * Note that initialBallVelocities().size() == numberOfBalls()
+     *
+     * @return list of balls velocities
+     */
+    public List<Velocity> initialBallVelocities() {
         return initialballvelocity;
     }
+    /**
+     * Paddle speed int.
+     *
+     * @return the paddle speed
+     */
     public int paddleSpeed() {
         return paddlespeed;
     }
-    public int paddleWidth(){
+    /**
+     * Paddle width int.
+     *
+     * @return the paddle width
+     */
+    public int paddleWidth() {
         return paddlewidth;
     }
-    // the level name will be displayed at the top of the screen.
-    public String levelName(){
+    /**
+     * Level name string.
+     *the level name will be displayed at the top of the screen.
+     *
+     * @return the name of the level
+     */
+    public String levelName() {
         return levelname;
     }
-    // Returns a sprite with the background of the level
-    public Sprite getBackground(){
+    /**
+     * Gets background.
+     *
+     * @return the background for the level
+     */
+    public Sprite getBackground() {
         return background;
     }
-    // The Blocks that make up this level, each block contains
-    // its size, color and location.
-    public List<Block> blocks(){
+    /**
+     * Blocks list. The Blocks that make up this level, each block contains
+     *  its size, color and location.
+     *
+     * @return the list of blocks in the level
+     */
+    public List<Block> blocks() {
         return blocksarray;
     }
-    // Number of levels that should be removed
-    // before the level is considered to be "cleared".
-    // This number should be <= blocks.size();
-    public int numberOfBlocksToRemove(){
+    /**
+     * Number of blocks to remove int.Number of levels that should be removed
+     * before the level is considered to be "cleared".
+     * This number should be <= blocks.size();
+     *
+     * @return the number of blaocks to remove in the level
+     */
+    public int numberOfBlocksToRemove() {
         return numberOfBlocksToRemove;
     }
 }

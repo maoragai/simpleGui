@@ -1,6 +1,12 @@
+/**
+ * The type Printing hit listener.
+ */
 public class PrintingHitListener implements HitListener {
 
 
+    /**
+     * Instantiates a new Printing hit listener.
+     */
     public PrintingHitListener() {
     }
 

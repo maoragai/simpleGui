@@ -61,6 +61,7 @@ public class Point {
 
     /**
      * x setter.
+     *
      * @param x the x value to set
      */
     public void setX(double x) {
@@ -69,6 +70,7 @@ public class Point {
 
     /**
      * y setter.
+     *
      * @param y the y value to set
      */
     public void setY(double y) {

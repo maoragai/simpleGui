@@ -5,15 +5,13 @@ import java.util.ArrayList;
  */
 class Rectangle {
     private Point upperLeft1;
-
-
-
     private double width1, height1;
 
     /**
      * Create a new rectangle with location and width/height.
-     * @param upper the upper left Point of the rectangle
-     * @param width the witdth of the rectangle
+     *
+     * @param upper  the upper left Point of the rectangle
+     * @param width  the witdth of the rectangle
      * @param height the height of the rectangle
      */
     public Rectangle(Point upper, double width, double height) {
@@ -25,6 +23,7 @@ class Rectangle {
     /**
      * Return a (possibly empty) List of intersection points
      * with the specified line.
+     *
      * @param line the line with which the rectangle might intersect
      * @return array of points
      */
@@ -62,6 +61,7 @@ class Rectangle {
 
     /**
      * Return the width and height of the rectangle.
+     *
      * @return the width of the rectangle
      */
     public double getWidth() {
@@ -70,6 +70,7 @@ class Rectangle {
 
     /**
      * the width of the rectangle.
+     *
      * @return the width of the rectangle
      */
     public double getHeight() {
@@ -78,13 +79,19 @@ class Rectangle {
 
     /**
      * Returns the upper-left point of the rectangle.
+     *
      * @return get the upperleft point of the rectangle
      */
     public Point getUpperLeft() {
         return upperLeft1;
     }
 
-    public void setWidth1(double width1) {
-        this.width1 = width1;
+    /**
+     * Sets width 1.
+     *
+     * @param w the w
+     */
+    public void setWidth1(double w) {
+        this.width1 = w;
     }
 }

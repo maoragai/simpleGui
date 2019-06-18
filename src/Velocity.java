@@ -44,6 +44,7 @@ public class Velocity {
 
     /**
      * dx1 setter.
+     *
      * @return the dy velocity
      */
     public double getDx() {
@@ -52,6 +53,7 @@ public class Velocity {
 
     /**
      * set dx velocity.
+     *
      * @param dx the dx velocity to set
      */
     public void setDx(double dx) {
@@ -60,6 +62,7 @@ public class Velocity {
 
     /**
      * dy getter.
+     *
      * @return the dy velocity
      */
     public double getDy() {
@@ -68,6 +71,7 @@ public class Velocity {
 
     /**
      * dy1 setter.
+     *
      * @param dy the dy to set
      */
     public void setDy(double dy) {

@@ -2,24 +2,61 @@ import biuoop.GUI;
 import biuoop.KeyboardSensor;
 import java.util.ArrayList;
 
+/**
+ * The type Ass 5 game.
+ */
 public class Ass5Game {
 
     private Counter ballCount = new Counter();
 
-    public static void main(String[] args){
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
+    public static void main(String[] args) {
         GUI             gui = new GUI("Arkanoid", 800, 600);
-        AnimationRunner runner=new AnimationRunner(gui,60);
+        AnimationRunner runner = new AnimationRunner(gui,60);
         KeyboardSensor  key = gui.getKeyboardSensor();
         Counter         live = new Counter();
-        Counter         score=new Counter();
-        GameFlow        gameFlow=new GameFlow(runner,key,gui,live,score);
+        Counter         score = new Counter();
+        GameFlow        gameFlow = new GameFlow(runner, key, gui, live, score);
 
         live.increase(7);
-        ArrayList<LevelInformation> levels=new ArrayList<>();
-        levels.add(new Level1());
-        levels.add(new Level2());
-        levels.add(new Level3());
-        levels.add(new Level4());
+        ArrayList<LevelInformation> levels = new ArrayList<>();
+
+        if (args.length == 0) {
+            levels.add(new Level1());
+            levels.add(new Level2());
+            levels.add(new Level3());
+            levels.add(new Level4());
+        } else { //there are arguments
+            for (String levelNumberString : args) {
+                int levelNumber;
+                try {
+                    levelNumber = Integer.parseInt(levelNumberString);
+                } catch (NumberFormatException e) {
+                    continue;
+                }
+                switch (levelNumber) {
+                    case 1:
+                        levels.add(new Level1());
+                        break;
+                    case 2:
+                        levels.add(new Level2());
+                        break;
+                    case 3:
+                        levels.add(new Level3());
+                        break;
+                    case 4:
+                        levels.add(new Level4());
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        //run the levels array
         gameFlow.runLevels(levels);
         //game is over close the ui
         gui.close();

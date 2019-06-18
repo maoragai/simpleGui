@@ -10,6 +10,7 @@ public class SpriteCollection {
 
     /**
      * add a specified sprite to the sprite collection.
+     *
      * @param s the sprite to add to the colection.
      */
     public void addSprite(Sprite s) {
@@ -18,6 +19,7 @@ public class SpriteCollection {
 
     /**
      * remove a specific sprite.
+     *
      * @param s the sprite to remove
      */
     public void removeSprite(Sprite s) {
@@ -35,6 +37,7 @@ public class SpriteCollection {
 
     /**
      * call drawOn(d) on all sprites.
+     *
      * @param d the draw surface to draw on
      */
     public void drawAllOn(DrawSurface d) {

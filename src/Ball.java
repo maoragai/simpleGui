@@ -1,5 +1,4 @@
 import biuoop.DrawSurface;
-
 import java.awt.Color;
 
 /**
@@ -7,7 +6,6 @@ import java.awt.Color;
  */
 public class Ball implements Sprite {
     private Point place;
-    //GameLevel game;
     private int radius;
     private Color color1;
     private Velocity velocity;
@@ -126,7 +124,7 @@ public class Ball implements Sprite {
     /**
      * get velocity method.
      *
-     * @return ball's velocity object
+     * @return ball 's velocity object
      */
     public Velocity getVelocity() {
         return this.velocity;
@@ -156,7 +154,7 @@ public class Ball implements Sprite {
                 && (Math.abs(this.place.getX() - tarj.getEndPoint().getX()) <= Math.abs(this.velocity.getDx()))
                 || (this.place.getY() != tarj.getEndPoint().getY())
                 && (Math.abs(this.place.getY() - tarj.getEndPoint().getY()) <= Math.abs(this.velocity.getDy()))) {
-            this.setVelocity(infor.getCollisionObject().hit(this,tarj.getEndPoint(), this.velocity));
+            this.setVelocity(infor.getCollisionObject().hit(this, tarj.getEndPoint(), this.velocity));
         }
         this.place = this.getVelocity().applyToPoint(this.place);
     }
@@ -179,7 +177,12 @@ public class Ball implements Sprite {
         g.addSprite(this);
     }
 
-    public void removeFromGame(GameLevel gameLevel){
+    /**
+     * Remove from game.
+     *
+     * @param gameLevel the game level
+     */
+    public void removeFromGame(GameLevel gameLevel) {
 
         gameLevel.removeSprite(this);
     }

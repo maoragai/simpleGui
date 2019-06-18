@@ -1,3 +1,6 @@
+/**
+ * The type Game enviroment test.
+ */
 public class gameEnviromentTest {
     /**
      * generates an animation of a bouncing ball
