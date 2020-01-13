@@ -193,9 +193,9 @@ public class GameLevel implements Animation {
     }
 
     @Override
-    public void doOneFrame(DrawSurface d) {
+    public void doOneFrame(DrawSurface d, double dt) {
         this.sprites.drawAllOn(d);
-        this.sprites.notifyAllTimePassed();
+        this.sprites.notifyAllTimePassed(dt);
         if (this.key.isPressed("p")) {
             this.runner.run(new PauseScreen(this.key));
         }

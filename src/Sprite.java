@@ -13,8 +13,10 @@ public interface Sprite {
 
     /**
      * notify the sprite that time has passed.
+     *
+     * @param dt the time passed since last call
      */
-    void timePassed();
+    void timePassed(double dt);
 
     /**
      * add this object to a specified game.

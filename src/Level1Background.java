@@ -31,7 +31,7 @@ public class Level1Background implements Sprite {
      * notify the sprite that time has passed.
      */
     @Override
-    public void timePassed() {
+    public void timePassed(double dt) {
 
     }
 

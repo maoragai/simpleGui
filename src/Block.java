@@ -136,8 +136,9 @@ public class Block implements Collidable, Sprite, HitNotifier {
 
     /**
      * notify the sprite that time has passed.
+     * @param dt the amount of time since last call
      */
-    public void timePassed() {
+    public void timePassed(double dt) {
     }
 
     /**

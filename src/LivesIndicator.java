@@ -49,9 +49,10 @@ public class LivesIndicator implements Sprite {
 
     /**
      * notify the sprite that time has passed.
+     * @param dt the amount of time since last call
      */
     @Override
-    public void timePassed() {
+    public void timePassed(double dt) {
 
     }
 

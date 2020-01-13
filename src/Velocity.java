@@ -33,12 +33,13 @@ public class Velocity {
     /**
      * calculates the balls new position.
      *
-     * @param p current ball position
+     * @param p  current ball position
+     * @param dt the dt
      * @return new ball position
      */
-    public Point applyToPoint(Point p) {
-        p.setX(p.getX() + dx1); //= p.point_x + dx1;
-        p.setY(p.getY() + dy1); //= p.point_y + dy1;
+    public Point applyToPoint(Point p, double dt) {
+        p.setX(p.getX() + dx1 * dt); //= p.point_x + dx1;
+        p.setY(p.getY() + dy1 * dt); //= p.point_y + dy1;
         return p;
     }
 

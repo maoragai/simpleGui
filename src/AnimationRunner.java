@@ -7,6 +7,9 @@ import biuoop.Sleeper;
  */
 public class AnimationRunner {
     private GUI gui;
+
+
+
     private int framesPerSecond;
     private Sleeper sleeper = new Sleeper();
 
@@ -21,7 +24,14 @@ public class AnimationRunner {
         this.framesPerSecond = fpS;
     }
 
-
+    /**
+     * Gets frames per second.
+     *
+     * @return the frames per second
+     */
+    public int getFramesPerSecond() {
+        return framesPerSecond;
+    }
     /**
      * Run.
      *
@@ -32,8 +42,8 @@ public class AnimationRunner {
         while (!animation.shouldStop()) {
             long startTime = System.currentTimeMillis(); // timing
             DrawSurface d = gui.getDrawSurface();
-
-            animation.doOneFrame(d);
+            double dt = (double) 1 / framesPerSecond;
+            animation.doOneFrame(d, dt);
 
             gui.show(d);
             long usedTime = System.currentTimeMillis() - startTime;

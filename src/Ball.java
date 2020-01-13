@@ -90,9 +90,13 @@ public class Ball implements Sprite {
 
     }
 
+    /**
+     * Time passed.
+     * @param dt the amount of time since last call
+     */
     @Override
-    public void timePassed() {
-        this.moveOneStep();
+    public void timePassed(double dt) {
+        this.moveOneStep(dt);
     }
 
     /**
@@ -141,8 +145,10 @@ public class Ball implements Sprite {
 
     /**
      * changing the ball's position by 1 step.
+     *
+     * @param dt the amount of time from last call
      */
-    public void moveOneStep() {
+    public void moveOneStep(double dt) {
         //equation
         Line tarj = new Line(this.getX(), this.getY(),
                 this.getX() + this.velocity.getDx() * rightBorder,
@@ -156,7 +162,7 @@ public class Ball implements Sprite {
                 && (Math.abs(this.place.getY() - tarj.getEndPoint().getY()) <= Math.abs(this.velocity.getDy()))) {
             this.setVelocity(infor.getCollisionObject().hit(this, tarj.getEndPoint(), this.velocity));
         }
-        this.place = this.getVelocity().applyToPoint(this.place);
+        this.place = this.getVelocity().applyToPoint(this.place, 60 * dt);
     }
 
     /**

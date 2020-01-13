@@ -45,32 +45,36 @@ public class Paddle implements Sprite, Collidable {
 
     /**
      * moving the paddle position one left turn.
+     *
+     * @param dt the dt
      */
-    public void moveLeft() {
+    public void moveLeft(double dt) {
         for (int i = 0; i < 5; i++) {
             section.get(i).getCollisionRectangle().getUpperLeft().setX(
                     this.paddleShape.getCollisionRectangle().getUpperLeft().getX()
-                            + i * (this.paddleShape.getCollisionRectangle().getWidth() / 5) - moveStep);
+                            + i * (this.paddleShape.getCollisionRectangle().getWidth() / 5) - moveStep * dt);
             section.get(i).getCollisionRectangle().getUpperLeft().setY(
                     this.paddleShape.getCollisionRectangle().getUpperLeft().getY());
         }
         this.paddleShape.getCollisionRectangle().getUpperLeft().setX(
-                this.paddleShape.getCollisionRectangle().getUpperLeft().getX() - moveStep);
+                this.paddleShape.getCollisionRectangle().getUpperLeft().getX() - moveStep * dt);
     }
 
     /**
      * moving the paddle position one right turn.
+     *
+     * @param dt the dt
      */
-    public void moveRight() {
+    public void moveRight(double dt) {
         for (int i = 0; i < 5; i++) {
             section.get(i).getCollisionRectangle().getUpperLeft().setX(
                     this.paddleShape.getCollisionRectangle().getUpperLeft().getX()
-                            + i * (this.paddleShape.getCollisionRectangle().getWidth() / 5) + moveStep);
+                            + i * (this.paddleShape.getCollisionRectangle().getWidth() / 5) + moveStep * dt);
             section.get(i).getCollisionRectangle().getUpperLeft().setY(
                     this.paddleShape.getCollisionRectangle().getUpperLeft().getY());
         }
         this.paddleShape.getCollisionRectangle().getUpperLeft().setX(
-                this.paddleShape.getCollisionRectangle().getUpperLeft().getX() + moveStep);
+                this.paddleShape.getCollisionRectangle().getUpperLeft().getX() + moveStep * dt);
     }
 
     /**
@@ -79,17 +83,18 @@ public class Paddle implements Sprite, Collidable {
      * @param mS the move step
      */
     public void setMoveStep(int mS) {
-        this.moveStep = mS;
+        this.moveStep = 60 * mS;
     }
     /**
      * note the object that the time has passed.
+     * @param dt the amount of time since last call
      */
-    public void timePassed() {
+    public void timePassed(double dt) {
         if (keyboard.isPressed(KeyboardSensor.LEFT_KEY)) {
-            moveLeft();
+            moveLeft(dt);
         }
         if (keyboard.isPressed(KeyboardSensor.RIGHT_KEY)) {
-            moveRight();
+            moveRight(dt);
         }
     }
 

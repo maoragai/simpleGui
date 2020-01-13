@@ -22,13 +22,12 @@ public class ScoreIndicator implements Sprite {
     /**
      * draw the sprite to the screen.
      *
-     * @param d the drawSurface to draw on
+     * @param d  the drawSurface to draw on
+     *
      */
     @Override
     public void drawOn(DrawSurface d) {
         Rectangle r = this.shape;
-
-
         d.setColor(Color.white);
         //filling the block with color
         d.fillRectangle((int) r.getUpperLeft().getX(), (int) r.getUpperLeft().getY(),
@@ -50,9 +49,10 @@ public class ScoreIndicator implements Sprite {
 
     /**
      * notify the sprite that time has passed.
+     * @param dt the amount of time since last call
      */
     @Override
-    public void timePassed() {
+    public void timePassed(double dt) {
 
     }
 

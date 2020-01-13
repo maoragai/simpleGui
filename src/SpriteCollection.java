@@ -28,10 +28,12 @@ public class SpriteCollection {
 
     /**
      * call timePassed() on all sprites.
+     *
+     * @param dt the amount of time since last call
      */
-    public void notifyAllTimePassed() {
+    public void notifyAllTimePassed(double dt) {
         for (int i = 0; i < sprites.size(); i++) {
-            sprites.get(i).timePassed();
+            sprites.get(i).timePassed(dt);
         }
     }
 

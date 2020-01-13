@@ -33,8 +33,9 @@ public class CountdownAnimation implements Animation {
     /**
      * draw a one frame of objects.
      * @param d the drawsurface
+     * @param dt the amount of time since the last call
      */
-    public void doOneFrame(DrawSurface d) {
+    public void doOneFrame(DrawSurface d, double dt) {
         this.gameScreen.drawAllOn(d);
         if (this.counterCurrent > 0) {
             d.setColor(Color.RED);

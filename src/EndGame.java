@@ -31,8 +31,9 @@ public class EndGame implements Animation {
     /**
      * do one frame of the animation.
      * @param d the ddrawsurface
+     * @param dt the amount of time since last call
      */
-    public void doOneFrame(DrawSurface d) {
+    public void doOneFrame(DrawSurface d, double dt) {
         //background
         d.setColor(Color.white);
         d.drawRectangle(0, 0, d.getWidth(), d.getHeight());

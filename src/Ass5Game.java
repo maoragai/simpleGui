@@ -1,5 +1,8 @@
 import biuoop.GUI;
 import biuoop.KeyboardSensor;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -13,15 +16,20 @@ public class Ass5Game {
      * Main.
      *
      * @param args the args
+     * @throws IOException the io exception
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         GUI             gui = new GUI("Arkanoid", 800, 600);
-        AnimationRunner runner = new AnimationRunner(gui,60);
+        AnimationRunner runner = new AnimationRunner(gui, 60);
         KeyboardSensor  key = gui.getKeyboardSensor();
         Counter         live = new Counter();
         Counter         score = new Counter();
         GameFlow        gameFlow = new GameFlow(runner, key, gui, live, score);
-
+        HighScoresTable table = new HighScoresTable(10);
+        File file = new File(System.getProperty("user.dir") + "/highscores.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
         live.increase(7);
         ArrayList<LevelInformation> levels = new ArrayList<>();
 
