@@ -6,35 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc28e802-614a-47c7-a074-4e3d5b3a47f3" name="Default Changelist" comment="this is a backup for ass5&#10;till this version everything works&#10;no checkstyle was conducted">
-      <change afterPath="$PROJECT_DIR$/src/HighScoresAnimation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HighScoresTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/KeyPressStoppableAnimation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReadWriteTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScoreInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AnimationRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnimationRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ass5Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ass5Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BouncingBallAnimation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CountdownAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CountdownAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EndGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EndGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level1Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level1Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level2Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level2Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level3Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level3Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Level4Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level4Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LevelNameIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LevelNameIndicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LivesIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LivesIndicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MultipleBouncingBallsAnimation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PauseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PauseScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoreIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoreIndicator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SpriteCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpriteCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Velocity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Velocity.java" afterDir="false" />
-    </list>
+    <list default="true" id="cc28e802-614a-47c7-a074-4e3d5b3a47f3" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ReadWriteTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            <state relative-caret-position="332">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -232,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1589" />
     <option name="width" value="1628" />
     <option name="height" value="1747" />
@@ -270,7 +242,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558603640261" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../biuoop.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -385,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560892634739</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="this is a backup for ass5&#10;till this version everything works&#10;no checkstyle was conducted">
+      <created>1578905025573</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578905025573</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -399,8 +378,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1842" height="1002" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1765695" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1765695" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -409,7 +389,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2627315" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40757748" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40757748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33951333" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1093,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ReadWriteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        <state relative-caret-position="332">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
